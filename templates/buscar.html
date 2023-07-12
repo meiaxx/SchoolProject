@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Buscar</title>
+  <style rel="stylesheet" href="../static/search.css"></style>
+
+</head>
+
+{% block content %}
+<body>
+	<form method="POST">
+		<div class="search-box">
+		    <button class="btn-search"><i class="fas fa-search"></i></button>
+		    <input type="text" class="input-search" name="codigo" oninput="maxLengthCheck(this)" placeholder="Codigo" min="1" max="999" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+		    <br><br><br>
+			<button type="submit" class="btn btn-primary">Buscar</button>
+
+		    <a href="{{ url_for('index')}}">
+				<input type="button" class="btn btn-primary" value="Cancelar"></br></br>
+			</a>
+	  	</div>
+	</form>
+
+	<script>
+	function maxLengthCheck(object) {
+		if (object.value.length > object.max.length)
+			object.value = object.value.slice(0, object.max.length)
+	}
+	</script>
+
+</div> 
+</body>
+{% endblock %}
+
+</html>

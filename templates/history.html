@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Historia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="../static/images/messianico.ico">
+
+
+
+</head>
+<style type="text/css">
+	body
+	{
+	    width: 100%;
+	    height: 100vh;
+	    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('static/images/4.jpg');
+	    background-size: cover;
+	    background-position: center;
+	}
+
+	.navbar
+	{
+	  width: 85%;
+	  margin: auto;
+	  padding: 35px 0;
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	}
+
+	.logo
+	{
+	  width: 120px;
+	  cursor: pointer;
+	}
+
+	.navbar ul li{
+	  list-style: none;
+	  display: inline-block;
+	  margin: 0 20px;
+	  position: relative;
+	  color: #fff;
+	  text-decoration: none;
+	  text-transform: uppercase;
+	}
+
+.navbar ul li a{
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.navbar ul li::after{
+  content: '';
+  height: 3px;
+  width: 0%;
+  background: #009688;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+
+.navbar ul li:hover::after{
+  width: 100%;
+
+}
+
+p
+{
+  color: #fff;
+  margin-left:10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+*{margin: 0;padding: 0;box-sizing: border-box;font-family: 'Roboto', sans-serif; font-weight: 500;}
+html{
+	/*font-size: 62.5%;*/
+}
+:root{
+	--black: #000000;
+	--light-red: #dd4545;
+}
+.footer-container{
+	width: 100vw;
+	//background-color: #edebed8c;
+	display: flex;
+	justify-content: space-around;
+	padding: 7rem 0 5rem 0;
+}
+
+/*footer left side start*/
+.footer-logo{
+	/*background-color: yellowgreen;*/
+	width: 18vw;
+	margin-left: 7rem;
+}
+.footer-logo h2{
+	font-size: 2.7rem;
+}
+.footer-logo p{
+	font-size: 1.4rem;
+	color: #6e6b6b;
+	padding: 1.5rem 0rem;
+	line-height: 2.1rem;
+}
+.footer-logo a{
+	text-decoration: none;
+}
+.fa{
+	background-color: var(--black);
+	color: #ffffff;
+	padding: .6rem;
+	border-radius: .3rem;
+}
+.icons{
+	margin: 0rem 1.5rem;
+}
+/*footer left side ends*/
+/*footer center starts*/
+.footer-links{
+	width: 32vw;
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.4rem;
+}
+.footer-links ul a li{
+	list-style-type: none;
+	padding: 1rem 0rem;
+}
+.footer-links ul a{
+	text-decoration: none;
+	color: #6e6b6b;
+}	
+/*footer center ends*/
+
+/*footer right section*/
+.footer-contactus{
+	width: 17vw;
+	margin-right:50px;
+}
+.footer-contactus h2{
+	font-size: 1.9rem;
+}
+.footer-contactus button{
+	padding: 1.4rem 2rem;
+    font-size: 1.6rem;
+    background: var(--light-red);
+    border: none;
+    border-radius: .4rem;
+    color: #ffff;
+    margin-top: 1.6rem;
+    cursor: pointer;
+}
+.copywright-tag{
+	background-color: lightgray;
+	padding: 1.5rem;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+/*
+NAVBAR HISTORY
+*/
+.navbar
+	{
+	  width: 85%; 
+	  height:50%;
+	  margin: auto;
+	  padding: 35px 0;
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	}
+
+	.logo
+	{
+	  width: 60px;
+	  cursor: pointer;
+	}
+
+	.navbar ul li{
+	  list-style: none;
+	  display: inline-block;
+	  margin: 0 30px;
+	  margin-left:50px;
+	  margin-right:50px;
+	  position: relative;
+	  color: #fff;
+	  text-decoration: none;
+	  text-transform: uppercase;
+	}
+
+	.navbar ul li a{
+	  color: #fff;
+	  text-transform: uppercase;
+	}
+
+	.navbar ul li::after{
+	  content: '';
+	  height: 3px;
+	  width: 0%;
+	  background: #009688;
+	  position: absolute;
+	  left: 0;
+	  bottom: -10px;
+	  transition: 0.5s;
+	}
+
+
+	.navbar ul li:hover::after{
+	  width: 100%;
+	}
+/* LOL */
+
+ 	.footer-container{
+		flex-direction: column;
+		align-items: center;
+	}
+	.footer-logo{
+		width: 2px;
+		margin-bottom: 0rem;
+		margin-left: 0rem;
+		margin-right: 8rem;
+		
+	}
+	
+	.footer-logo a
+	{
+	 margin: 1px 20px;
+	}
+	
+	.footer-links{
+		flex-direction: column;
+		text-align: center;
+	}
+	.footer-links h3{
+		font-size: 2.4rem;
+		margin: 1rem 0px;
+	}
+	.footer-contactus{
+		margin-right: 60px;
+		text-align: center;
+	}
+	.footer-contactus .email-contact
+	{
+		text-align: right;
+	}
+	.copywright-tag
+	{
+	 margin-left:40px;
+	}
+
+
+}
+
+</style>
+
+<body>
+  <header class="b">
+    <img src="/static/images/messianico.jpg" width="78px" height="78px" title="logo">
+  <h1 style="color: #fff;text-align: center;">I.E.E. SAN JUAN BAUTISTA.</h1>
+  <div class="navbar">
+    <ul>
+        <li><a href="{{ url_for('home') }}">Inicio</a></li>
+        <li><a href="{{ url_for('about') }}">Sobre Nosotros</a></li>
+        <li><a href="#">Historia</a></li>
+        <li><a href="{{ url_for('students') }}">Estudiantes</a></li>
+        <li><a href="{{ url_for('gallery') }}">Galeria</a></li>
+        <li><a href="{{ url_for('videos') }}}}">Videos</a></li>
+        <li><a href="{{ url_for('login') }}}}">Login</a></li>
+    </ul>
+
+  </div>
+
+  </header><br><br><hr><br><br>
+    <section class="re">
+        <h1 style="color: #fff;text-align: center;"> Reseña Historica Del I.E.E.  "San Juan Bautista".</h1>
+        <br></br>
+        <div class="res">
+        <p>El Instituto de Educación Especial Bolivariano “San Juan Bautista” de Carache, Estado Trujillo, se funda el 03 de febrero del 2.007. Comenzó a funcionar con (01) Directivo y (05) Docentes, en un anexo de la Casa Parroquial (en calidad de préstamo), por el Cura Francisco Linares, ubicado en la Av. 3 Libertad, entre Calles “Juan Antonio Román Valecillos” y “Sucre” de la Parroquia Capital del Municipio Carache, Estado Trujillo, con una Matrícula Inicial de 32 Alumnos y el siguiente Personal: Directora Encargada: Lic. Fanny Josefina Terán, perteneciente a la Escuela Bolivariana “Dr. Ernst” y las Docentes:  T.S.U. Lisneidy Martínez, T.S.U. Marianela Cañizales,  T.S.U. María Montilla, T.S.U. Aracelis Pérez y T.S.U. Marggiori Ochoa, provenientes con codificación del I.E.E.B.“Flor de Patria”. Cabe destacar que, su creación se logró durante el desempeño de funciones de la Mgs. Gladys Faneite,  como Jefa del Municipio Escolar Carache, en el año 2.007,  hoy,  Consejo Municipal para la Educación, previa elaboración del Diagnóstico de la Población con Necesidades Educativas Especiales en todo  el Municipio Carache, el cual reflejó un considerable porcentaje de sujetos, quienes requerían una educación especializada, sobre todo en el área de Retardo Mental. <br> <br>
+
+          En el año escolar 2.008-2.009, se inician las actividades en la Biblioteca Pública “Don Luis Sáez”, en calidad de préstamo, por el Director del Instituto Municipal para la Cultura de Carache, Lic. Alexi Álvarez,  institución ubicada en la Av. 4 Carabobo de la Parroquia Carache, atendiendo una matrícula de 44 Alumnos,  permaneciendo allí en funcionamiento el mencionado instituto hasta el mes de mayo del año 2.009. A partir de este mes, se cambió la sede del I.E.E.B.  para una casa ubicada en la Av. Comercio, entre calle “Sucre” y “Juan Antonio Román Valecillos” de la Parroquia y Municipio Carache, Estado Trujillo, en calidad de préstamo por parte de la representante de la vivienda, Sra. Rosario Palma. Actualmente todavía sigue funcionando en este inmueble, con una matrícula  de 53 Alumnos. Es importante destacar, que en octubre del año 2.008, comienza a funcionar el Programa de Alimentación Escolar (PAE), así como también la asignación en calidad de préstamo del ciudadano Wuilmer A. Barreto, por orden de la Profesora. Iraida Coromoto Velásquez para ese entonces, Coordinadora Municipal de Educación Especial con la autorización del Lic. Avilio Velásquez, Director del NER 415 La Morita, al cual pertenecía el mencionado trabajador con el cargo de Aseador, condición  laboral con la que fue transferido a esta institución. Igualmente, como un acontecimiento trascendental para el instituto, fue en el mes de mayo del año 2.009, cuando se  le asignó el Código de Dependencia por parte del Ministerio del Poder Popular para la Educación, cuyo número es el siguiente: 006490450. <br> <br>
+          
+          Asimismo, es importante acotar que en el mes de enero del año 2.010, en diligencias realizadas desde el año 2.008, por el Consejo Municipal para la Educación de Carache,  en las personas del Lic. Rodrigo Nieves, como Coordinador y la Profe. Iraida Coromoto Velásquez, como Coordinadora de Educación Especial, ingresó el siguiente personal administrativo y obrero: Secretarios: Alirio Barreto y Keyla Lugo; Trabajadora Social Yamilet Delgado; Asistentes: Willians Velásquez, Adriana Godoy y Yamileth Linares; Obreros: Carlos Godoy, Carlos Vásquez, Daniel Domínguez, Davis Martínez, Nery Meléndez y María M. Carrillo; y en funciones de Vigilantes: Jorge Vetencourt, Juan Meléndez y Guzmán Velásquez. Igualmente, en  febrero del año 2.010, fue sincerada la nómina del Personal Directivo y Docente, pasando a pertenecer formalmente a este Instituto. De igual forma, en el mes de marzo de este mismo año ingresa como Docente de Aula el Profe. Juan Manuel León Crespo, quien fue cedido del Liceo Bolivariano “Juan Antonio Román Valecillos”, con la autorización de la Lic. Sanjuán Materano, Directora de esa casa de estudios y en septiembre de este año 2.010, por disposición de la Profa. Maritza Graterol, Directora del Grupo Escolar “Guadalupe Román Colmenares” de la Parroquia La Concepción de Carache,se trasladó la Docente Minerva Benítez para el Instituto de Educación Especial. Cabe destacar, que tales traslados del personal descrito se justificaron por el  hecho de  que en el I.E.E.B. solamente existían 3 docentes especialistas. Es necesario puntualizar que las Profas. Jenny Serrano y Yardelis K. Domínguez, prestan sus servicios como Docentes de esta institución desde diciembre del año 2.008, en condición de interinas sin ningún tipo de remuneración. <br> <br>
+          
+          Por otra parte debe señalarse, la integración de la institución con todos los sectores activos de la vida local, tales como: Misiones Sociales y Educativas (Vinculantes de la Misión Sucre), Parroquia Eclesiástica de San Juan Bautista, Entes Culturales, Consejos Comunales, otros Centros Educativos y Entes Gubernamentales.  <br> <br>
+          
+          En otro orden de ideas, es preciso significar que durante estos años se han realizado diligencias ante las autoridades municipales (Alcaldía y Concejo Municipal de Carache) y regionales (Gobernación del Estado, DINFRA y FEDE), para la Construcción de la Sede del Instituto de Educación Especial Bolivariano “San Juan Bautista”. En la actualidad, se está realizando la petición de dicha construcción ante el Ministerio del Poder Popular para la Educación y FEDE, sede Caracas, quien transfirió las diligencias a las autoridades de FEDE a nivel del Estado Trujillo, ubicadas en Valera. <br> <br> En cuanto al terreno que se requiere para la construcción de la sede del instituto, la  Alcaldía del Municipio Carache, a través de la Coordinación de Proyectos envió mediante oficio de fecha 12-07-2.010, levantamiento topográfico en digital y copia del documento del terreno destinado por esa municipalidad para dicha construcción, el cual está ubicado  en la Av. 4 Carabobo, al frente de la Urb. Minumboc y detrás del Hospital “Dr. Quevedo Viloria” de Carache. Asimismo, en la mencionada comunicación dieron respuesta relacionada  al Proyecto: Adquisición de Unidad de Transporte Escolar, el cual está haciendo elaborado  por esa Coordinación de Proyectos de la Alcaldía.  <br><br>
+          
+          Prosiguiendo con la reseña histórica de esta institución, es preciso significar que desde el 16 de noviembre de 2.010 hasta el 01 de julio de 2.011, el I.E.E.B “San Juan Bautista”  estuvo funcionando en un inmueble tipo casa en condición de arrendamiento, propiedad del Br. José Rafael Zapata, costeado con recursos del personal del plantel, ubicado  en la Avenida 1 Comercio entre Calles Carrillo y la Esperanza de esta población. Es de resaltar, que de este inmueble se salió en condición de desalojo por parte de los propietarios,no existiendo la intervención efectiva de las autoridades municipales en materia de derechos de niños, niñas y adolescentes, vale decir, el Consejo Municipal de Derechos, el cual no demostró una actuación acorde a las funciones inherentes a este órgano del sistema de protección de niños, niñas y adolescentes, conforme al Artículo 147 de la LOPNNA (2.007). <br>
+          <br>
+          
+          Luego, al inicio del año escolar: 2.010-2.011, es decir, desde el 16-09-2.011, en vista de no contar con un espacio donde funcionar como institución, por disposición de la Coordinadora Encargada del Municipio Escolar Carache, Profa. Marlene Pichardo, el personal de la Escuela Especial inició sus actividades administrativas en un ambiente del Liceo Bolivariano “Juan A. Román V.”, el cual era adjunto a la Coordinación del Municipio Escolar Carache, sólo para realizar el trabajo administrativo.  <br> <br>
+          
+          El 01 de noviembre de 2.011, esta institución recibió una Visita de Acompañamiento (supervisión) de la Coordinación Zonal de Educación Especial, representada por las Profesoras. Lirosbeya Torres y Ana Quintero, donde se estableció que las docentes hicieran el trabajo pedagógico en la modalidad de abordaje a hogar, en virtud de no poseer la institución  un sitio donde prestar atención educativa a sus estudiantes.  <br><br>
+          
+          La Lic. Fanny Terán, Directora Encargada del instituto, ante la situación de inestabilidad en cuanto a un espacio donde funcionar más adecuadamente, en conversación  con la Prof. Carmen Velásquez de Durán, Directora del C.E.I. Simoncito “Dr. Ernst”,  logra encontrar el apoyo de esta casa de estudios, donde a partir del día viernes 02-12-2.011, nos cedieron en calidad de préstamo de una oficina para laborar administrativamente y desde entonces hasta la presente fecha, el personal tiene como punto de trabajo el mencionado Simoncito. <br> <br>
+          
+          Retomando el punto de las diligencias tendentes a la construcción de la sede propia del Instituto de Educación Especial, durante el año 2.012, se realizaron diligencias ante la Alcaldía  del Municipio Carache, obteniéndose de esta forma la donación de un lote de terreno ubicado en la Av. 4 Carabobo, detrás del Hospital “Dr. Rafael Quevedo Viloria” donde gracias a la Municipalidad (Alcaldía y Concejo Municipal) y el Consejo Federal de Gobierno, se iniciaron los trabajos de construcción de la Escuela Especial “San Juan Bautista”.  De igual  forma, en ese mismo año gracias al Señor Daniel Montilla, se obtuvo respuesta positiva por parte del Ministerio del Poder Popular para la Educación, con relación a la solicitud que se hizo de un transporte escolar para el instituto, el cual lo recibió la Prof. Gladis Faneite de Pérez, Directora de la Zona Educativa del Estado Trujillo en fecha 25-05-2.012 y que  a la presente fecha (febrero 2013) está bajo responsabilidad de esta dependencia regional de educación. <br> <br>
+          Cabe destacar, que en febrero de 2.012, se inició la transformación actual de la Educación Especial en Venezuela, traducida en una serie de jornadas de formación dirigidas a todo  el personal de los planteles de la modalidad. Así mismo, se estableció el cambio de denominación de la institución, la cual pasó de Instituto de Educación Especial Bolivariano  a Escuela Primaria para la Diversidad Funcional Intelectual y finalmente Escuela Bolivariana para la Diversidad Funcional Intelectual “San Juan Bautista”. Sin embargo,  para las diligencias y trámites ante el Ministerio del Poder Popular para la Educación se continúa con la denominación de I.E.E.B., puesto que por voucher permanece la misma  hasta la presente fecha. <br> <br>
+
+De igual manera, el  30-10-2.012 ingresó la Lic. Alexia Mendoza, como Docente de Aula Contratada con presupuesto del Centro de Rehabilitación del Lenguaje “Trina Pérez” de Valera.  Igualmente, el 08-01-2.013 ingresó la Lic. Ricalis D. Delgado D., como Docente de Aula Contratada con presupuesto del I.E.E.B. “San Juan Bautista”.
+
+Cabe resaltar,  que esta institución desde su creación celebra el 03 de diciembre, el Día Internacional de las Personas con Discapacidad, desarrollando una serie de actividades culturales,  recreativas y religiosas que involucran no solamente a la matrícula del plantel sino también a todas las personas con discapacidad del Municipio Carache, con el apoyo y participación  de las demás instituciones educativas y entes gubernamentales tales como: Cuerpo de Bomberos, Protección Civil, Hospital “Dr. Rafael Quevedo Viloria”,  Consejos Comunales, entre otros. <br> <br>
+
+
+Es preciso significar, que al inicio del año escolar 2.013-2.014, exactamente el 17-09-2013, se comenzó a laborar en la sede propia de la Escuela Especial, ubicada  en la Av. 4 Carabobo frente a la Urb. Minumboc, recibiéndose de manera extraoficial dichas instalaciones por parte de la Alcaldía del Municipio Carache, ente ejecutor de esta obra,  mientras se esperaba el acto de entrega formal de esta institución educativa al Ministerio del Poder Popular para la Educación; no obstante, el 24-10-2.013, se llevó a efecto  el Acto de Inauguración de la Escuela Especial, donde estuvo presente Equipo  de la Zona Educativa del estado Trujillo, encabezado por el Mcs. Loengry Matheus,  Prof. Lirosbeya Torres, Coordinadora Regional de Educación Especial, ciudadano Sogel Sallam, Alcalde del Municipio Carache y equipo del gobierno municipal, representantes  de instituciones públicas y privadas, colectivo institucional, medios de comunicación tanto local como regional y un significativo número de estudiantes  en  condiciones educativas especiales de nuestro plantel. <br><br>
+
+En otro orden de ideas, durante el mes de octubre de 2.013, la Escuela Especial estuvo recibiendo dotación  y suministros para equipamiento de la cocina, mobiliario para oficinas administrativas, ambientes de clases,  aula de preescolar, un parque infantil de madera, entre otros, por parte de FEDE- Caracas.
+
+En el mes de enero del año 2014, ingresó bajo la figura de contrato la Licda. Luzmila del Carmen Villacinda Álvarez, como docente de aula asignada a este instituto  para trabajar con la etapa preescolar. <br><br>
+
+Durante el año 2014, se realizó la Consulta Nacional por la Calidad Educativa, como un mecanismo para revisar el accionar educativo en sus diferentes ámbitos, de la cual surgieron  unos resultados que fueron proyectados en soluciones a través de 10 banderas a desarrollar en cada una de las instituciones educativas. De esta manera, se tiene  un resultado referido a la Modalidad de Educación Especial que para aquel momento se estaba trabajando con la transformación de dicha modalidad, sabiendo que  existían discrepancias específicamente en el aspecto legal, puesto que desde su inicio esa transformación carecía de una base constitucional y legal, así como otras improvisaciones  y desaciertos que la misma contenía al respecto. <br> <br> En mayo de 2015, se inicia la Revolución Técnica de las Áreas y Programas de la Modalidad con la finalidad de reimpulsar y repolitizar la misma, con la realización de una  serie de talleres en primer término revisar la Conceptualización y Política de la Modalidad del año 1997, para elaborar las propuestas y enviarlas al M.P.P.E. En este  sentido, actualmente se está trabajando con las orientaciones que envió la Dirección Nacional de Educación Especial y las propuestas por estas determinadas, al punto de regresar  a las anteriores denominaciones, tal es el caso de esta escuela que lleva el nombre de <strong>INSTITUTO DE EDUCACIÓN ESPECIAL BOLIVARIANO.</strong> <br> <br>
+En este sentido, en  Abril del  Año 2016 orienta sus acciones a la consolidación de la atención educativa integral de la población con necesidades educativas especiales o discapacidad  y de acuerdo a los resultados de la Jornada Nacional de Actualización de la Conceptualización y Política de Educación Especial realizada en los meses  de junio y julio del año 2015. <br> <br> 
+	Es de hacer notar, que para la fecha 28 de Noviembre del 2016 se envió oficio al Profesor Alberto Castellanos para solicitar su intervención al respecto de tramitar  ante la Zona Educativa el traslado correspondiente al señor Daniel José Domínguez Manzanilla CI: V-19.643.918 quien se desempeña como Aseador, de igual manera,> el 14 de Febrero del 2017 se envió a la Coordinadora Zonal de Educación Especial Lcda. Ana Virginia Gil para notificar lo antes expuesto. <br> <br> 
+
+	Por otra parte el sr. Carlos Godoy se trasladó a otra institución en el año 2017. Para este mismo año el sr. David Martínez envió vía correo electrónico una carta de aceptación  de la Escuela Bolivariana Gran Colombia Caracas, con el propósito de tramitar  su traslado, aunado a esto el 8 de Mayo de 2019 envió a la institución una notificación donde  se encuentra cumpliendo funciones como mensajero en el Sindicato Bolivariano de Trabajadores y Trabajadoras del Ministerio del Poder Popular para la Educación  (SIBOTTRA-MPPE). <br> <br>
+
+El día lunes 18 del  mes de Septiembre del año 2017, se presentó en la Institución la Profesora Yexica Vera CI: 19.593.232 quien fue enviada por la Profesora Sandy  Cumana supervisora del circuito N°5, quien refirió que dicha docente fue asignada por el Programa Chamba Juvenil como docente vinculante para esta escuela. Asimismo el día  25 del mes de Septiembre de este mismo año se presentaron a esta institución la (os) ciudadana (os) Ysaira Benítez CI: 17.346.093 de Profesión Psicólogo, Fernando Duran  CI: 19.609.756  de Profesión T.S.U. en Administración de Recursos Humanos y Herbel Godoy CI: 25.459.755 de Profesión T.S.U. en Trabajo Social, para formar parte del  personal adscrito a esta institución. Luego el día 05 de Octubre del año en curso se presentó a esta institución la Profesora Maiger Benítez CI: 20.400.300 como Docente de  Aula,  igualmente, el día lunes 09 de Octubre, se presentó a esta institución la Profesora Yumisay Moreno CI: 13.872.019  como docente  de Educación Física y Deporte,  es de  hacer notar que este personal fue enviado por la Coordinadora Regional de Educación Especial  Trujillo, Profesora Ana Virginia Gil T. <br> <br>
+
+Es importante resaltar que para este mismo Año Escolar específicamente el Día 27/ 10/2017 se presentó en la Institución el Profesor Wilmer A. García Patiño V- 15.407.801  como nuevo director encargado enviado por las autoridades de la Zona Educativa del Estado Trujillo, el mismo estuvo hasta el 31 de Julio del 2019. Es preciso acotar que en el  Año Escolar 2018- 2019 se recibió en la institución la Licenciada Milangela Mandato CI: V- graduada en Educación Integral,  Docente en función de Cultura hasta el mes de Junio  del 2019. Para ese mismo mes, la profesora Lisneidy Martínez C.I.: V- 17.347.989 comenzó a formar parte de la red circuital N° 6. <br> <br>
+	
+	Por consiguiente para el nuevo Año Escolar 2019- 2020 fue enviada por la Zona Educativa la Profesora MCs. Dilcia Urrutia CI: V- 8.719.505 como directora encargada, por otro lado,  el día Lunes 21 de Octubre se presentaron Erika Benítez CI: V-18.376.768, Yenny Cañizalez CI: V- 15.217.376 Licenciadas en Educación Especial, Luzkerly Trompetero  CI: V-24.140.402, Franyelis Perdomo CI: V- 25.459.863 Bachilleres, importante acotar que las cuatro fueron enviadas por Chamba Juvenil. <br> <br>
+ 
+            </p>
+        </div>
+    </section>
+	<footer style="background-color: lightgray;">
+		<div class="footer-container">
+			<div class="footer-logo">
+				<h2>I.E.E. SAN JUAN BAUTISTA.</h2>
+				<p>Escuela Para personas con discapacidad</p>
+				<a href="https://www.facebook.com" class="fa fa-facebook"></a>
+				<a href="https://whatsapp.com" class="fa icons fa-whatsapp"></a>
+				<a href="https://www.instagram.com" class="fa fa-instagram"></a>
+			</div>
+			<div class="footer-links">
+				<div class="platform">
+					<h3>Sistema</h3>
+					<ul>
+						<a href="#"><li>Como Funciona?</li></a>
+						<a href="#"><li>Registro</li></a>
+						<a href="#"><li>Logearse</li></a>
+					</ul>
+				</div>
+				<div class="learning">
+					<h3>Aprende</h3>
+					<ul>
+						<a href="#"><li>Educacion</li></a>
+						<a href="#"><li>Valores</li></a>
+						<a href="#"><li>Y muchas cosas mas</li></a>
+					</ul>
+				</div>
+				<div class="About">
+					<h3>Sobre Nosotros</h3>
+					<ul>
+						<a href="#"><li>Equipo</li></a>
+						<a href="#"><li>Estudiantes</li></a>
+						<a href="#"><li>Obreros</li></a>
+						<a href="#"><li>Maestros</li></a>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-contactus">
+				<h2>Contactanos</h2>
+				</br>
+				<h2 class="email-contact" >school@gmail.com</h2>
+			</div>
+		</div>
+		<div class="copywright-tag">&copyCopyright . All rights reserved</div>
+	</footer>
+
+
+
+    
+    
+</body>
+</html>

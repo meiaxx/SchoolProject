@@ -1,0 +1,198 @@
+{% extends 'index.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %} Inscripción {% endblock %}</title>
+	<link rel="stylesheet" href="../static/bootstrap.min.css">
+
+</head>
+<body>
+	{% block content %}
+
+	<h1 class="text-center">Inscripciones</h1>
+	<br>
+	<br>
+	
+	<div class="container">
+        <div class="card mt-3 w-25 mx-auto d-block">
+            <div class="card-body d-flex">
+                <strong>Alumno</strong>
+				<img src="{{ url_for('static',filename='images/plus-solid.svg')}}" width="25" class="mx-auto d-block" data-bs-toggle="modal" data-bs-target="#alumno">
+            </div>
+		</div>
+	</div>
+
+
+	<div class="container">
+        <div class="card mt-3 w-25 mx-auto d-block">
+            <div class="card-body d-flex">
+				<strong>Representante</strong>
+				<img src="{{ url_for('static',filename='images/plus-solid.svg')}}" width="25" class="mx-4 d-block" data-bs-toggle="modal" data-bs-target="#representante">
+            </div>
+		</div>
+	</div>
+
+	
+	<!-- Alumno Modal -->
+	<div class="modal fade" id="alumno" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nuevo Alumno</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">x</button>
+            </div>
+            <div class="modal-body">
+                <form action="/new-alumno" method="post">
+                    <div class="row">
+                        <div class="col-6">
+                            <label>Codigo</label>
+                            <input type="text" class="form-control mb-3" name="codigo" onKeyDown="if(this.value.length==3) return false;"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+                        </div>
+
+                        <div class="col-6">
+                            <label>Primer Nombre</label>
+                            <input type="text" class="form-control mb-3" name="firstname" required>
+                        </div>
+
+                        <div class="col-6">
+                            <label>Primer Apellido</label>
+                            <input type="text" class="form-control mb-3" name="firstsurname" required>
+                        </div>
+
+                        <div class="col-6">
+                            <label>Cedula</label>
+                            <input type="text" class="form-control mb-3" name="cedula" onKeyDown="if(this.value.length==8) return false;" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+                        </div>
+                
+                        <div class="col-6">
+                            <label>Segundo Nombre</label>
+                            <input type="text" class="form-control mb-3" name="secondname" required>
+                        </div>
+
+						<div class="col-6">
+                            <label>Segundo Apellido</label>
+                            <input type="text" class="form-control mb-3" name="secondsurname" required>
+                        </div>
+
+						<div class="col-6">
+                            <label>Edad</label>
+                            <input type="text" class="form-control mb-3" name="edad" onKeyDown="if(this.value.length==2) return false;" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+                        </div>
+
+                        <div class="col-6">
+                            <label>Sexo</label>
+                            <input type="text" class="form-control mb-3" name="sexo" required>
+                        </div>
+
+                        <div class="col-6">
+                            <label>Habilidades Y Destrezas</label>
+                            <input type="text" class="form-control mb-3" name="hb"  required>
+                        </div>
+
+                        <div class="col-6">
+                            <label>Discapacidad</label>
+                            <input type="text" class="form-control mb-3" name="discapacidad" required>
+                        </div>
+
+						<div class="col-6">
+                            <label>Deporte Favorito</label>
+                            <input type="text" class="form-control mb-3" name="deportefav" required>
+                        </div>
+
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                {{message}}
+                            {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+
+                    </div>
+                        <button type="submit" class="btn btn-primary w-100">Guardar</button>    
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
+	<!-- Representante Modal -->
+	<div class="modal fade" id="representante" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nuevo Representante</h5>
+                    <button type="button" class="close"  data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="contactform" action="/new-representante" method="post">
+                        <div class="row">
+                            <div class="col-6">
+							<label>Nombre</label>
+							<input type="text" class="form-control mb-3" name="nombre" required>
+						</div>
+
+						<div class="col-6">
+							<label>Cedula</label>
+							<input type="text" class="form-control mb-3" name="cedula" onKeyDown="if(this.value.length==8) return false;" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+						</div>
+
+						<div class="col-6">
+							<label>Edad</label>
+							<input type="text" class="form-control mb-3" name="edad" onKeyDown="if(this.value.length==2) return false;" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+						</div>
+
+						<div class="col-6">
+							<label>Ocupación</label>
+							<input type="text" class="form-control mb-3" name="ocupacion" required>
+						</div>
+
+						<div class="col-6">
+							<label>Sexo</label>
+							<input type="text" class="form-control mb-3" name="sexo" required>
+						</div>
+
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <script>alert('{{ message }}')</script>
+                            {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                        
+                        <button type="submit" class="btn btn-primary w-100">Guardar</button>    
+                    </form>
+                </div>
+		 	</div>
+        </div>
+    </div>
+
+
+    {% endblock %}
+
+    <script>
+	
+
+        $('#submit').click(function(e) {
+        e.preventDefault();
+        $("#message")
+            .slideDown(1000)
+            .delay(3000)
+            .slideUp();
+        });
+
+        
+        function maxLengthCheck(object) {
+            if (object.value.length > object.max.length)
+                object.value = object.value.slice(0, object.max.length)
+        }
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<style>
+    #container {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+</style>
+
+
+<form method="post">
+	<h1>Ingrese Codigo: </h1>
+	<br>
+	<input type="text" class="input-search" name="codigo" onKeyDown="if(this.value.length==3) return false;"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+	<button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+<br><br><br>
+
+<main class="d-flex">
+		<div id="container" class="container-fluid row mx-auto vh-100 justify-content-center">
+			<div class="card shadow">
+					{% if users %}
+					{% for user in users %}
+					<div class="row">
+						<div class="col-6">
+							<label>Codigo</label>
+								<input type="text" class="form-control mb-3" type="hidden" name="codigo" value="{{ user[1] }}" readonly>
+							</div>
+	
+							<div class="col-6">
+								<label>Primer Nombre</label>
+								<input type="text" class="form-control mb-3" name="firstname" value="{{ user[2] }}" readonly>
+							</div>
+	
+							<div class="col-6">
+								<label>Primer Apellido</label>
+								<input type="text" class="form-control mb-3" name="firstsurname" value="{{ user[3] }}" readonly>
+							</div>
+	
+	
+							<div class="col-6">
+								<label>Cedula</label>
+								<input type="text" class="form-control mb-3" name="cedula" value="{{ user[4] }}" readonly>
+							</div>
+						
+							<div class="col-6">
+								<label>Segundo Nombre</label>
+								<input type="text" class="form-control mb-3" name="secondname" value="{{ user[5] }}" readonly>
+							</div>
+	
+							<div class="col-6">
+								<label>Segundo Apellido</label>
+								<input type="text" class="form-control mb-3" name="secondsurname" value="{{ user[6] }}" readonly>
+							</div>
+	
+							<div class="col-6">
+								<label>Edad</label>
+								<input type="text" class="form-control mb-3" name="edad" value="{{ user[7] }}" readonly >
+							</div>
+	
+							<div class="col-6">
+								<label>Sexo</label>
+								<input type="text" class="form-control mb-3" name="sexo" value="{{ user[8] }}" readonly>
+							</div>
+	
+							<div class="col-6">
+								<label>Habilidades Y Destrezas</label>
+								<input type="text" class="form-control mb-3" name="hd" value="{{ user[9] }}" readonly>
+							</div>
+	
+							<div class="col-6">
+								<label>Discapacidad</label>
+								<input type="text" class="form-control mb-3" name="discapacidad" value="{{ user[10] }}" readonly>
+							</div>
+	
+							<div class="col-6">
+								<label>Deporte Favorito</label>
+								<input type="text" class="form-control mb-3" name="deportefav" value="{{ user[11] }}" readonly>
+							</div>
+						</div> 
+					</div>
+					{% endfor %}
+					{% endif %}
+
+				</div>
+			</div>
+	</main>
+
+
+{% endblock %}

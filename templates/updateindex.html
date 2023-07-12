@@ -1,0 +1,147 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <!-- Alumno -->
+    <form method="post">
+        <h1>Modificar Datos Del Estudiante</h1>
+        <h1>Ingrese Codigo</h1>
+        <input type="text" class="input-search" name="codigo" onKeyDown="if(this.value.length==3) return false;"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        <button type="submit" class="btn btn-primary">Modificar</button>
+    </form>
+
+    <br><br><br>
+        <!-- Representante -->
+        <form method="post">
+            <h1>Modificar Datos Del Representante</h1>
+            <h1>Ingrese Cedula</h1>
+            <input type="text" name="cedula" onKeyDown="if(this.value.length==8) return false;"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <button type="submit" class="btn btn-primary">Modificar</button>
+        </form>
+
+    <br><br><br>
+
+
+    <style>
+        #container {
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+    </style>
+ 
+<main class="d-flex">
+		<div id="container" class="container-fluid row mx-0 vh-100 justify-content-center">
+			<div class="card shadow">
+					{% if users %}
+					{% for user in users %}
+                    <form action="/updateAlumno" method="post">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label>Codigo</label>
+                                        <input type="text" class="form-control mb-3" type="hidden" name="codigo" value="{{ user[1] }}" readonly>
+                                    </div>
+            
+                                    <div class="col-6">
+                                        <label>Primer Nombre</label>
+                                        <input type="text" class="form-control mb-3" name="firstname" value="{{ user[2] }}" required>
+                                    </div>
+            
+                                    <div class="col-6">
+                                        <label>Primer Apellido</label>
+                                        <input type="text" class="form-control mb-3" name="firstsurname" value="{{ user[3] }}" required>
+                                    </div>
+            
+            
+                                    <div class="col-6">
+                                        <label>Cedula</label>
+                                        <input type="text" class="form-control mb-3" name="cedula" value="{{ user[4] }}" onKeyDown="if(this.value.length==8) return false;"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+                                    </div>
+                                
+                                    <div class="col-6">
+                                        <label>Segundo Nombre</label>
+                                        <input type="text" class="form-control mb-3" name="secondname" value="{{ user[5] }}" required>
+                                    </div>
+            
+                                    <div class="col-6">
+                                        <label>Segundo Apellido</label>
+                                        <input type="text" class="form-control mb-3" name="secondsurname" value="{{ user[6] }}" required>
+                                    </div>
+            
+                                    <div class="col-6">
+                                        <label>Edad</label>
+                                        <input type="text" class="form-control mb-3" name="edad" value="{{ user[7] }}" onKeyDown="if(this.value.length==2) return false;"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+                                    </div>
+            
+                                    <div class="col-6">
+                                        <label>Sexo</label>
+                                        <input type="text" class="form-control mb-3" name="sexo" value="{{ user[8] }}" required>
+                                    </div>
+            
+                                    <div class="col-6">
+                                        <label>Habilidades Y Destrezas</label>
+                                        <input type="text" class="form-control mb-3" name="hd" value="{{ user[9] }}" required>
+                                    </div>
+            
+                                    <div class="col-6">
+                                        <label>Discapacidad</label>
+                                        <input type="text" class="form-control mb-3" name="discapacidad" value="{{ user[10] }}" required >
+                                    </div>
+            
+                                    <div class="col-6">
+                                        <label>Deporte Favorito</label>
+                                        <input type="text" class="form-control mb-3" name="deportefav" value="{{ user[11] }}" required >
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Modificar</button>    
+                        </form>
+					</div>
+					{% endfor %}
+					{% endif %}
+
+				</div>
+			</div>
+	</main>
+
+    <main class="d-flex">
+        <div id="container" class="container-fluid row mx-0 vh-100 justify-content-center">
+            <div class="card shadow">
+				<!--<div class="card-body">-->
+                    {% if representanes %}
+                    {% for r in representanes %}
+                    <form  action="/updateRepresentante" method="post">
+                        <div class="row">
+                                <div class="col-6">
+                                    <label>Cedula</label>
+                                    <input type="text" class="form-control mb-3" type="hidden" name="cedula" value="{{ r[2] }}" readonly>
+                                </div>
+    
+                                <div class="col-6">
+                                    <label>Nombre</label>
+                                    <input type="text" class="form-control mb-3" name="nombre" value="{{ r[1] }}" required>
+                                </div>
+    
+                                <div class="col-6">
+                                    <label>Edad</label>
+                                    <input type="text" class="form-control mb-3" name="edad" value="{{ r[3] }}" onKeyDown="if(this.value.length==2) return false;"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+                                </div>
+    
+                                <div class="col-6">
+                                    <label>Ocupación</label>
+                                    <input type="text" class="form-control mb-3" name="ocupacion" value="{{ r[4] }}" required>
+                                </div>
+                        
+                                <div class="col-6">
+                                    <label>Sexo</label>
+                                    <input type="text" class="form-control mb-3" name="sexo" value="{{ r[5] }}" required>
+                                </div>
+                            </div>
+                                    <button type="submit" class="btn btn-primary w-100">Guardar</button>    
+                    </form>
+                    {% endfor %}
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+    </main>
+    
+
+{% endblock %}

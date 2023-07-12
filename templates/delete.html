@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<style>
+    #container {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+</style>
+
+<h1>Desincorporar Estudiante</h1>
+<br><br>
+<main class="d-flex">
+    <div id="container" class="container-fluid row m-0 vh-100 justify-content-center align-items-center">
+        <div class="card shadow">
+            <div class="card-body">
+                <form method="post">
+                    <h3 class="text-center">Desincorporación</h3>
+                    <label>Ingresar Codigo</label>
+                    <input type="text" class="form-control mb-3" name="codigo" onKeyDown="if(this.value.length==3) return false;"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                    <button onclick="return confirm('Estas seguro que deseas borrar el alumno?')" type="submit" class="btn btn-primary w-100">Desincorporar</button>
+
+                    <br><br>
+
+                    {% if message %}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button  type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">x</button>
+                        </div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

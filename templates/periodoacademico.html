@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
+    <title>Periodo Academico</title>
+</head>
+
+<body>
+    <form  method="post">
+        <div align="center">
+            <label>Año</label>
+            <input type="number" placeholder="YYYY" min="2018" max="2023" name="year">
+            <script>
+            document.querySelector("input[type=number]")
+            .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+            </script>
+            <button class="btn btn-primary" type="submit">Buscar</button>
+            <a href="{{url_for('index')}}" class="btn btn-primary">Menú</a>
+        </div>
+    </form>
+
+    <br><br>
+
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Grado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estudent in estudents %}
+            <tr>
+                <td>{{ estudent[0] }}</td>
+                <td>{{ estudent[1] }}</td>
+                <td>{{ estudent[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+ 
+</body>
+</html>

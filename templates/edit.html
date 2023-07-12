@@ -1,0 +1,87 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+{% for alum in alm %}
+    <h1>Modificar Datos De Alumno: <strong>{{ alum[2] }}</strong></h1>
+{% endfor %}
+
+<style>
+    #container {
+        padding-left: 10px;
+        padding-right: 250px;
+    }
+</style>
+
+<main class="d-flex">
+    <div id="container" class="container-fluid row mx-auto vh-100 justify-content-center">
+        <div class="card shadow">
+            <div class="card-body">
+                {% for a in alm %}
+                <form  action="/updateAlumno" method="post">
+                    <div class="row">
+                            <div class="col-6">
+                                <label>Codigo</label>
+                                <input type="text" class="form-control mb-3" type="hidden" name="codigo" value="{{ a[1] }}" readonly>
+                            </div>
+
+                            <div class="col-6">
+                                <label>Primer Nombre</label>
+                                <input type="text" class="form-control mb-3" name="firstname" value="{{ a[2] }}">
+                            </div>
+
+                            <div class="col-6">
+                                <label>Primer Apellido</label>
+                                <input type="text" class="form-control mb-3" name="firstsurname" value="{{ a[3] }}">
+                            </div>
+
+                            <div class="col-6">
+                                <label>Cedula</label>
+                                <input type="text" class="form-control mb-3" name="cedula" value="{{ a[4] }}" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                            </div>
+                    
+                            <div class="col-6">
+                                <label>Segundo Nombre</label>
+                                <input type="text" class="form-control mb-3" name="secondname" value="{{ a[5] }}">
+                            </div>
+
+                            <div class="col-6">
+                                <label>Segundo Apellido</label>
+                                <input type="text" class="form-control mb-3" name="secondsurname" value="{{ a[6] }}">
+                            </div>
+
+                            <div class="col-6">
+                                <label>Edad</label>
+                                <input type="text" class="form-control mb-3" name="edad" value="{{ a[7] }}" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                            </div>
+
+                            <div class="col-6">
+                                <label>Sexo</label>
+                                <input type="text" class="form-control mb-3" name="sexo" value="{{ a[8] }}">
+                            </div>
+
+                            <div class="col-6">
+                                <label>Habilidades Y Destrezas</label>
+                                <input type="text" class="form-control mb-3" name="hd" value="{{ a[9] }}">
+                            </div>
+
+                            <div class="col-6">
+                                <label>Discapacidad</label>
+                                <input type="text" class="form-control mb-3" name="discapacidad" value="{{ a[10] }}">
+                            </div>
+
+                            <div class="col-6">
+                                <label>Deporte Favorito</label>
+                                <input type="text" class="form-control mb-3" name="deportefav" value="{{ a[11] }}">
+                            </div>
+                        </div>
+                                <button type="submit" class="btn btn-primary w-100">Guardar</button>    
+                </form>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+</main>
+
+
+{% endblock %}

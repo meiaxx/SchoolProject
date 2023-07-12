@@ -1,0 +1,56 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+{% for r in rep %}
+    <h1>Modificar Datos De Representante: <strong>{{ r[2] }}</strong></h1>
+{% endfor %}
+
+<style>
+    #container {
+        padding-left: 10px;
+        padding-right: 250px;
+    }
+</style>
+
+<main class="d-flex">
+    <div id="container" class="container-fluid row mx-auto vh-100 justify-content-center">
+        <div class="card shadow">
+            <div class="card-body">
+                {% for r in rep %}
+                <form  action="/updateRepresentante" method="post">
+                    <div class="row">
+                            <div class="col-6">
+                                <label>Cedula</label>
+                                <input type="text" class="form-control mb-3" type="hidden" name="cedula" value="{{ r[2] }}" readonly>
+                            </div>
+
+                            <div class="col-6">
+                                <label>Nombre</label>
+                                <input type="text" class="form-control mb-3" name="nombre" value="{{ r[1] }}">
+                            </div>
+
+                            <div class="col-6">
+                                <label>Edad</label>
+                                <input type="text" class="form-control mb-3" name="edad" value="{{ r[3] }}" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                            </div>
+
+                            <div class="col-6">
+                                <label>Ocupación</label>
+                                <input type="text" class="form-control mb-3" name="ocupacion" value="{{ r[4] }}">
+                            </div>
+                    
+                            <div class="col-6">
+                                <label>Sexo</label>
+                                <input type="text" class="form-control mb-3" name="sexo" value="{{ r[5] }}">
+                            </div>
+                        </div>
+                                <button type="submit" class="btn btn-primary w-100">Guardar</button>    
+                </form>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+</main>
+
+{% endblock %}

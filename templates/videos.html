@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    :root {
+    --primary : linear-gradient(to bottom right, #0a0057, #3f00ee);
+    --secondary : gold;
+    --text : #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-image: var(--primary);
+    font-family: sans-serif;
+    color: var(--text);
+
+    display: flex;
+    align-items: center;
+}
+
+.containervideos {
+    width: 100vw;
+
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr;
+    gap: 1rem;
+    
+    padding: .5rem 1rem;
+    text-transform: capitalize;
+}
+
+@media screen and (max-width: 990px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.main-video, .video-playlist {
+    width: 100%;
+    height: 30rem;
+}
+
+.main-video .title {
+    margin-top: 1rem;
+}
+
+.video-playlist .title {
+    padding-left: 1rem;
+}
+
+.video-playlist > p {
+    padding: 1rem;
+    color: var(--secondary);
+}
+
+.video-playlist .videos{
+    height: 70%;
+    overflow-y: auto;
+}
+
+.video-playlist .videos::-webkit-scrollbar {
+    width: .4rem;
+    border-radius: .4rem;
+    background-color: #0005;
+}
+
+.video-playlist .videos::-webkit-scrollbar-thumb {
+    border-radius: .4rem;
+    background-color: #fff;
+}
+
+.video-playlist .videos .video {
+    position: relative;
+    width: 100%;
+    height: 4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 1rem;
+    margin-top: .1rem;
+    cursor: pointer;
+
+    border-radius: .5rem;
+}
+
+.video-playlist .videos .video:hover {
+    background-color: #0003;
+}
+
+.video-playlist .videos .video.active {
+    background-color: #0003;
+    color: var(--secondary);
+}
+
+.main-video video {
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.video img {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 1.5rem;
+    height: 1.5rem;
+    
+    filter: invert(100%);
+}
+
+.video-playlist .videos .video.active img {
+    filter: invert(100%) sepia(100%) saturate(2000%) hue-rotate(360deg);
+}
+
+.video p {
+   margin-left: 2.5rem;
+}
+
+.video h3 {
+    width: 23rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font: 100 1rem sans-serif;
+    padding: 0 .5rem;
+}
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
+    <title>Videos</title>
+</head>
+
+<body>
+
+    <main class="containervideos">
+        <section class="main-video">
+            <video src="../static/videos/baile.mp4" controls autoplay muted></video>
+            <h3 class="title">Videos</h3>
+        </section>
+
+        <section class="video-playlist">
+            <a class="btn btn-primary" href="{{url_for('home')}}">Inicio</a>
+            <a class="btn btn-primary" href="{{url_for('home')}}">Sobre Nosotos</a>
+            <a class="btn btn-primary" href="{{ url_for('students') }}">Estudiantes</a>
+            <a class="btn btn-primary" href="{{ url_for('gallery') }}">Galeria</a>
+            <a class="btn btn-primary" href="{{ url_for('videos') }}">Videos</a>
+            <a class="btn btn-primary" href="{{ url_for('login') }}">Sistema</a>
+
+            <p>4 Videos  &nbsp; . &nbsp; 12m 31s</p>
+            <div class="videos">
+
+            </div>
+        </section>
+    </main>
+    <script>
+    const main_video = document.querySelector('.main-video video');
+    const main_video_title = document.querySelector('.main-video .title');
+    const video_playlist = document.querySelector('.video-playlist .videos');
+
+    let data = [
+    {
+        'id': 'a1',
+        'title': 'Bailes',
+        'name': 'baile.mp4',
+        'duration': '0:49',
+    },
+    {
+        'id': 'a2',
+        'title': 'Fanny',
+        'name': 'fanny.mp4',
+        'duration': '5:45',
+    },
+    {
+        'id': 'a3',
+        'title': 'Pesar',
+        'name': 'pesar.mp4',
+        'duration': '03:45',
+    },
+
+    {
+        'id': 'a4',
+        'title': 'Cece',
+        'name': 'cece.mp4',
+        'duration': '1:41',
+    },
+
+];
+
+data.forEach((video, i) => {
+    let video_element = `
+                <div class="video" data-id="${video.id}">
+                    <img src="../static/play.svg" alt="">
+                    <p>${i + 1 > 9 ? i + 1 : '0' + (i + 1)}. </p>
+                    <h3 class="title">${video.title}</h3>
+                    <p class="time">${video.duration}</p>
+                </div>
+    `;
+    video_playlist.innerHTML += video_element;
+})
+
+let videos = document.querySelectorAll('.video');
+videos[0].classList.add('active');
+videos[0].querySelector('img').src = '../static/pause.svg';
+
+videos.forEach(selected_video => {
+    selected_video.onclick = () => {
+
+        for (all_videos of videos) {
+            all_videos.classList.remove('active');
+            all_videos.querySelector('img').src = '../static/play.svg';
+
+        }
+
+        selected_video.classList.add('active');
+        selected_video.querySelector('img').src = '../static/pause.svg';
+
+        let match_video = data.find(video => video.id == selected_video.dataset.id);
+        main_video.src = '../static/videos/' + match_video.name;
+        main_video_title.innerHTML = match_video.title;
+    }
+});
+    </script>
+
+</body>
+
+</html>

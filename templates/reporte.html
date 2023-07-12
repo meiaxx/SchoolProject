@@ -1,0 +1,127 @@
+<html lang="en">
+    <head>
+        <title>index</title>
+        <link rel="stylesheet" href="../static/dashboard.css">
+		<link rel="stylesheet" href="../static/bootstrap.min.css">
+		<script src="../static/pooper.min.js"></script>
+		<script src="../static/bootstrap.bundle.min.js"></script>
+		<script src="../static/jquery-3.5.1.js"></script>
+
+	</head>
+
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		list-style: none;
+		text-decoration: none;
+		font-family: 'Josefin Sans', sans-serif;
+		}
+
+		.one{
+		display: flex;
+		position: relative;
+		}
+
+		.one .two{
+		width: 225px;
+		height: 100%;
+		background: #01c4f5;
+		padding: 30px 0px;
+		position: fixed;
+		}
+
+		.one .two h1{
+		color: #fff;
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 30px;
+		font-style: oblique;
+		font-weight: bold;
+		}
+			
+		.one .two h2{
+		color: #fff;
+		text-align: center;
+		}
+			
+		.one .two .active{
+		background: #01c4f5;
+		}
+
+		.one .two ul li{
+		text-align: center;
+		padding: 15px;
+		border-bottom: 0.1px solid white;
+		border-top: 0.1px solid white;
+		}   
+
+		.one .two ul li a{
+		color: #ffffff;
+		display: block;
+		}
+
+		.one .two ul li a .side{
+		width: 25px;
+		align: center;
+		}
+
+		.one .content{
+		width: 100%;
+		margin-left: 200px;
+		}
+
+		.one .content .topbar{
+		text-align: center;
+		padding: 20px;
+		background: #01c4f5;
+		color: white;
+		}
+			
+		.one .content .contentbar{
+		margin: auto;
+		}
+
+		.one .content .contentbar h1{
+		color: #01c4f5;
+		text-align: center;
+		font-style: oblique;
+		font-weight: bold;
+		}
+		
+		</style>
+
+ 
+    <body>
+        <div class="one">
+            <div class="two">
+                <h1>Opciones</h1>
+                <ul>
+                    <li><a href="{{url_for('estudianteinicial')}}">Estudiantes de inicial</a></li>
+                    <li><a href="{{url_for('estudiantes1')}}">Estudiantes 1g</a></li>
+                    <li><a href="{{url_for('estudiantes2')}}">Estudiantes 2g</a></li>
+                    <li><a href="{{url_for('estudiantes3')}}">Estudiantes 3g</a></li>
+                    <li><a href="{{url_for('estudiantes4')}}">Estudiantes 4g</a></li>
+                    <li><a href="{{url_for('estudiantes5')}}">Estudiantes 5g</a></li>
+                    <li><a href="{{url_for('estudiantes6')}}">Estudiantes 6g</a></li>
+                    <li><a href="{{url_for('index')}}">Volver</a></li>
+                </ul>
+            </div>
+
+			<div class="content" align="center">
+                <div class="topbar">
+                    <h2>Bienvenido</h2>                   
+                </div></br></br>
+                <div class="contentbar">
+                    <div class="msg">{{ msg }}</div>
+                </div>
+
+				{% block content %}
+				{% endblock %}
+            </div>
+
+            </div>
+        </div>
+    </body>
+</html>
